@@ -26,9 +26,9 @@ public class FileService {
     private final FileRepository fileRepository;
 
     public boolean initImages(FileRequest fileRequest) {
-        if (!fileRequest.getImage().isEmpty()) {
+        if (!fileRequest.getImages().isEmpty()) {
             List<com.example.tripKo.domain.file.entity.File> fileEntities = new ArrayList<>();
-            for(MultipartFile i : fileRequest.getImage()) {
+            for(MultipartFile i : fileRequest.getImages()) {
                 fileEntities.add(imageS3Service.uploadImage(i));
             }
 

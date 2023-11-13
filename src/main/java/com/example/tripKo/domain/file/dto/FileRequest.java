@@ -13,13 +13,5 @@ import java.util.List;
 @Builder
 public class FileRequest {
 
-    @NotNull
-    private Long placeId;
-
-    @NotNull
-    private int rating;
-
-    private String description;
-
-    List<MultipartFile> image = new ArrayList<>();
+    List<MultipartFile> images = new ArrayList<>();
 }
