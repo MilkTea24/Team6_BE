@@ -148,6 +148,15 @@ CREATE TABLE IF NOT EXISTS `member_reservation_info` (
     primary key (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+DROP TABLE IF EXISTS `member_has_places_is_wished`;
+CREATE TABLE IF NOT EXISTS `member_has_places_is_wished` (
+                                                         `id` bigint not null AUTO_INCREMENT,
+                                                         `member_id` bigint not null,
+                                                         `place_id` bigint not null,
+    primary key (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 DROP TABLE IF EXISTS `place`;
 CREATE TABLE IF NOT EXISTS `place` (
                                        `id` bigint not null AUTO_INCREMENT,
