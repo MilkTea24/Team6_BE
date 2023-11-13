@@ -2,6 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: redis-ns
   name: redis
 spec:
   serviceName: redis
@@ -58,6 +59,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis
+  namespace: redis-ns
 spec:
   #type: ClusterIP
   #clusterIP: None # Headless
