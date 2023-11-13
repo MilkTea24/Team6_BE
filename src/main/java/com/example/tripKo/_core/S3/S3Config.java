@@ -58,7 +58,6 @@ public class S3Config {
             return AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                     .withRegion(region)
-                    .withPathStyleAccessEnabled(true)
                     .withClientConfiguration(getClientConfigurationWithProxy(proxy))
                     .build();
         } catch (SdkClientException e) {
@@ -70,10 +69,10 @@ public class S3Config {
     private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy(Proxy proxy) {
         com.amazonaws.ClientConfiguration clientConfiguration = new com.amazonaws.ClientConfiguration();
         if (proxy.type() == Proxy.Type.HTTP) {
-            InetSocketAddress address = (InetSocketAddress) proxy.address();
-            HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
-            clientConfiguration.setProxyHost(httpHost.getHostName());
-            clientConfiguration.setProxyPort(httpHost.getPort());
+            //InetSocketAddress address = (InetSocketAddress) proxy.address();
+            //HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
+            clientConfiguration.setProxyHost(proxyHost);
+            clientConfiguration.setProxyPort(proxyPort);
         }
         return clientConfiguration;
     }
