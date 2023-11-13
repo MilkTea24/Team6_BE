@@ -5,6 +5,7 @@ import com.example.tripKo._core.S3.ImageS3Service;
 import com.example.tripKo._core.errors.exception.Exception500;
 import com.example.tripKo.domain.file.dao.FileRepository;
 import com.example.tripKo.domain.file.dto.FileRequest;
+import com.example.tripKo.domain.file.entity.File;
 import com.example.tripKo.domain.place.entity.ReviewHasFile;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.fileupload.FileItem;
@@ -24,10 +25,9 @@ public class FileService {
     private final ImageS3Service imageS3Service;
     private final FileRepository fileRepository;
 
-    /*
     public boolean initImages(FileRequest fileRequest) {
         if (!fileRequest.getImage().isEmpty()) {
-            List<File> fileEntities = new ArrayList<>();
+            List<com.example.tripKo.domain.file.entity.File> fileEntities = new ArrayList<>();
             for(MultipartFile i : fileRequest.getImage()) {
                 fileEntities.add(imageS3Service.uploadImage(i));
             }
@@ -38,8 +38,7 @@ public class FileService {
         return true;
     }
 
-     */
-
+    /*
     public boolean initImages() {
         List<com.example.tripKo.domain.file.entity.File> fileEntities = new ArrayList<>();
         List<MultipartFile> mFiles = new ArrayList<>();
@@ -81,4 +80,5 @@ public class FileService {
 
         return true;
     }
+    */
 }
