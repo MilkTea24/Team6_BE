@@ -59,9 +59,10 @@ kind: Service
 metadata:
   name: redis
 spec:
-  #type: ClusterIP
+  type: ClusterIP
   #clusterIP: None # Headless
   selector:
     app: redis
   ports:
     - port: 6379
+      targetPort: 6379
