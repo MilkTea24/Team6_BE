@@ -12,6 +12,5 @@ import java.util.List;
 @Getter
 @Builder
 public class FileRequest {
-
-    List<MultipartFile> images = new ArrayList<>();
+    List<MultipartFile> image = new ArrayList<>();
 }
