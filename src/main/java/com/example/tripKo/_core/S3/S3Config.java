@@ -69,6 +69,9 @@ public class S3Config {
         clientConfiguration.setProxyHost(proxyHost);
         clientConfiguration.setProxyPort(proxyPort);
         clientConfiguration.setProxyProtocol(Protocol.HTTP);
+        clientConfiguration.setConnectionTimeout(30000);
+        clientConfiguration.setSocketTimeout(30000);
+
         return clientConfiguration;
     }
 }
