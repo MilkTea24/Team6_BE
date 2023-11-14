@@ -31,10 +31,10 @@ public class S3Config {
     @Value("cloud.aws.region.static")
     private String region;
 
-    @Value("${spring.devtools.remote.proxy.host}")
+    @Value("krmp-proxy.9rum.cc")
     private String proxyHost;
 
-    @Value("${spring.devtools.remote.proxy.port}")
+    @Value("3128")
     private int proxyPort;
 
     /*
@@ -55,16 +55,11 @@ public class S3Config {
         AWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
 
         // Configure the client with proxy settings
-        try {
             return AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                     .withRegion(region)
                     .withClientConfiguration(getClientConfigurationWithProxy())
                     .build();
-        } catch (SdkClientException e) {
-            // Handle exception
-            throw new RuntimeException("Error creating S3 client with proxy.", e);
-        }
     }
 
     private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy() {
