@@ -87,6 +87,7 @@ public class MemberService {
 
   @Transactional
   public UserInfoResponse getUserInfo(Member member) {
+    member = memberRepository.findById(member.getId()).orElseThrow();
     UserInfoResponse userInfoResponse = UserInfoResponse.builder().member(member).build();
     return userInfoResponse;
   }
