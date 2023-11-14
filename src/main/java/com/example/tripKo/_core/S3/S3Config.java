@@ -1,5 +1,6 @@
 package com.example.tripKo._core.S3;
 
+import com.amazonaws.Protocol;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -50,7 +51,7 @@ public class S3Config {
     @Bean
     public AmazonS3 S3Builder() {
         // Create proxy settings
-        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
+        //Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
         AWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
 
         // Configure the client with proxy settings
@@ -58,7 +59,7 @@ public class S3Config {
             return AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                     .withRegion(region)
-                    .withClientConfiguration(getClientConfigurationWithProxy(proxy))
+                    .withClientConfiguration(getClientConfigurationWithProxy())
                     .build();
         } catch (SdkClientException e) {
             // Handle exception
@@ -66,14 +67,13 @@ public class S3Config {
         }
     }
 
-    private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy(Proxy proxy) {
+    private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy( {
         com.amazonaws.ClientConfiguration clientConfiguration = new com.amazonaws.ClientConfiguration();
-        if (proxy.type() == Proxy.Type.HTTP) {
-            //InetSocketAddress address = (InetSocketAddress) proxy.address();
-            //HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
-            clientConfiguration.setProxyHost(proxyHost);
-            clientConfiguration.setProxyPort(proxyPort);
-        }
+        //InetSocketAddress address = (InetSocketAddress) proxy.address();
+        //HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
+        clientConfiguration.setProxyHost(proxyHost);
+        clientConfiguration.setProxyPort(proxyPort);
+        clientConfiguration.setProxyProtocol(Protocol.HTTP);
         return clientConfiguration;
     }
 }
