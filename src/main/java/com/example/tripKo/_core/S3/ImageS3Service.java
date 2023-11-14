@@ -37,7 +37,7 @@ import java.util.UUID;
 public class ImageS3Service{
     private final AmazonS3 amazonS3;
 
-    @Value("${cloud.aws.s3.bucketName}")
+    @Value("${cloud.aws.s3.bucket}")
     private String bucketName; //버킷 이름
 
     @Value("${cloud.aws.region.static}")

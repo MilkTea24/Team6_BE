@@ -25,7 +25,7 @@ public class S3Config {
     @Value("${cloud.aws.credentials.secretKey}")
     private String secretKey;
 
-    @Value("${cloud.aws.s3.bucketName}")
+    @Value("${cloud.aws.s3.bucket}")
     private String bucketName;
 
     @Value("${cloud.aws.region.static}")
