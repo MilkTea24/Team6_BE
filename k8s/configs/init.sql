@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `contents` (
                                           `id` bigint not null AUTO_INCREMENT,
                                           `created_date` timestamp,
                                           `modified_date` timestamp,
-                                          `description` varchar(1000) not null,
+                                          `description` varchar(2000) not null,
     `page` bigint not null,
     `place_id` bigint not null,
     primary key (`id`)
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `contents_menu` (
                                                `created_date` timestamp,
                                                `modified_date` timestamp,
                                                `characteristic` varchar(255),
-    `description` varchar(1000),
+    `description` varchar(2000),
     `name` varchar(100) not null,
     `price` bigint,
     `contents_id` bigint not null,
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `file` (
 DROP TABLE IF EXISTS `food`;
 CREATE TABLE IF NOT EXISTS `food` (
                                       `id` bigint not null AUTO_INCREMENT,
-                                      `description` varchar(1000),
+                                      `description` varchar(2000),
     `food_category` varchar(255),
     `keyword` varchar(1000) not null,
     `name` varchar(100) not null,
