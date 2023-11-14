@@ -40,7 +40,7 @@ spec:
               valueFrom:
                   secretKeyRef:
                       name: env-secret
-                      key: access_key
+                      key: secret_key
             - name: BUCKET_NAME
               valueFrom:
                   secretKeyRef:
