@@ -217,7 +217,6 @@ DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
                                         `id` bigint not null AUTO_INCREMENT,
                                         `description` varchar(255),
-    `is_available` boolean not null,
     `score` integer not null,
     `type` varchar(255) not null,
     `usage_date` varchar(255) not null,
