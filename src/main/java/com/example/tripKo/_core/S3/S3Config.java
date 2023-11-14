@@ -19,16 +19,16 @@ import java.net.Proxy;
 
 @Configuration
 public class S3Config {
-    @Value("cloud.aws.credentials.accessKey")
+    @Value("${cloud.aws.credentials.accessKey}")
     private String accessKey;
 
-    @Value("cloud.aws.credentials.secretKey")
+    @Value("${cloud.aws.credentials.secretKey}")
     private String secretKey;
 
-    @Value("cloud.aws.s3.bucketName")
+    @Value("${cloud.aws.s3.bucketName}")
     private String bucketName;
 
-    @Value("cloud.aws.region.static")
+    @Value("${cloud.aws.region.static}")
     private String region;
 
     @Value("krmp-proxy.9rum.cc")
@@ -58,7 +58,7 @@ public class S3Config {
             return AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                     .withRegion(region)
-                    //.withClientConfiguration(getClientConfigurationWithProxy())
+                    .withClientConfiguration(getClientConfigurationWithProxy())
                     .build();
     }
 
