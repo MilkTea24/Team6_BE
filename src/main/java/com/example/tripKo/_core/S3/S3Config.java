@@ -67,7 +67,7 @@ public class S3Config {
         }
     }
 
-    private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy {
+    private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy() {
         com.amazonaws.ClientConfiguration clientConfiguration = new com.amazonaws.ClientConfiguration();
         //InetSocketAddress address = (InetSocketAddress) proxy.address();
         //HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
