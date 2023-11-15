@@ -599,7 +599,7 @@ INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('12',
         'The 1540 square meter Eternal Journey bookstore is the biggest facility in Ananti Town,
 and it offers cultural experiences that has never been available before.
-It offers many choices to choose from to find one\’s unique taste, sensitivity or lifestyle.'
+It offers many choices to choose from to find one\’s unique taste, sensitivity or lifestyle.\\n'
            , '1', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -612,7 +612,7 @@ INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('13',
         'The beautiful nature that transcends time is a source of inspiration and eternal muse for ANANTI.
 The Media Art Gallery of Cabinet de Poissons is a world that appreciates the greatness of nature and awakens the spirits of nature.
-We can encounter another world in this space that embraces the light and sound unique to nature and transcends time and space.'
+We can encounter another world in this space that embraces the light and sound unique to nature and transcends time and space.\\n'
            , '2', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
