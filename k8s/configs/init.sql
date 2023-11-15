@@ -577,6 +577,50 @@ VALUES ('35', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/resta
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
 VALUES ('8', 'Yukhoe', 'yukhoe is a dish of marinated raw beef slices with egg yolk, korean pear, sesame oil.', 'This place offers beef tartare with perilla leaves', '35000', '11', '35');
 
+-- Ananti Cobe
+INSERT INTO place (`id`,`average_rating`,`count`,`name`,`place_type`, `review_numbers`,`summary`,`address_id`,`file_id`)
+VALUES ('11', '0', '423', 'ANANTI COBE', 'TOURIST_SPOT','0',
+        'All the travels you expect are right here',
+        '10', '36');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('36', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/main.png', 'main.png','image/png');
+
+INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
+VALUES ('10', '268-31', 'Gijanghaean-ro', '46083', '8');
+
+INSERT INTO address_category (`id`, `emd_name`, `sigg_name`, `sido_name`)
+VALUES ('8', 'Gijang-eup', 'Gijang-gun', 'Busan');
+
+INSERT INTO place_tourist_spot(`id`/*, `category`*/, `place_id`)
+VALUES ('3'/*, 'Beach'*/, '11');
+
+INSERT INTO contents (`id`, `description`, `page`, `place_id`)
+VALUES ('12',
+        'The 1540\㎡ Eternal Journey bookstore is the biggest facility in Ananti Town,
+and it offers cultural experiences that has never been available before.
+It offers many choices to choose from to find one’s unique taste, sensitivity or lifestyle.'
+           , '1', '11');
+
+INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
+VALUES ('12', '12', '37');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('37', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/content1.png', 'content1.png', 'image/png');
+
+INSERT INTO contents (`id`, `description`, `page`, `place_id`)
+VALUES ('13',
+        'The beautiful nature that transcends time is a source of inspiration and eternal muse for ANANTI.
+The Media Art Gallery of Cabinet de Poissons is a world that appreciates the greatness of nature and awakens the spirits of nature.
+We can encounter another world in this space that embraces the light and sound unique to nature and transcends time and space.'
+           , '2', '11');
+
+INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
+VALUES ('13', '10', '38');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('38', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/content2.png', 'content2.png', 'image/png');
+
 -- bulgogi
 INSERT INTO food (`id`,`summary`,`food_category`,`keyword`,`name`, `description`,`view`,`file_id`)
 VALUES ('1', 'Bulgogi is a made of thin, marinated slices of meat, most commonly beef, grilled on a barbecue or on a stove-top griddle',
