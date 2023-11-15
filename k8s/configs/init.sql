@@ -555,7 +555,7 @@ INSERT INTO address_category (`id`, `emd_name`, `sigg_name`, `sido_name`)
 VALUES ('7', 'Gaebeop-dong', 'Sasang-gu', 'Busan');
 
 INSERT INTO place_restaurant(`id`, `closing_time`, `contact_info`, `opening_time`, `place_id`)
-VALUES ('5', '00:30', '+82 0507-1372-5203', '16:00', '10');
+VALUES ('5', '23:00', '+82 0507-1372-5203', '16:00', '10');
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('11',
