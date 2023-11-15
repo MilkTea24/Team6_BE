@@ -1,4 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS `tripko` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8_general_ci;
+CREATE SCHEMA IF NOT EXISTS `tripko` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 /*
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_root_password by 'root';
