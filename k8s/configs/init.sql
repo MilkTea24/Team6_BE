@@ -730,6 +730,9 @@ VALUES ('3', '3', '5');
 INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
 VALUES ('4', '3', '32');
 
+INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
+VALUES ('5', '3', '39');
+
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/beeftartare1.png', 'beeftartare1.png', 'image/png');
 
