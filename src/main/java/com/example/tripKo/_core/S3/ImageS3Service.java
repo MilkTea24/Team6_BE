@@ -43,12 +43,6 @@ public class ImageS3Service{
     @Value("${cloud.aws.region.static}")
     private String region;
 
-    @Value("cloud.aws.credentials.accessKey")
-    private String accessKey;
-
-    @Value("cloud.aws.credentials.secretKey")
-    private String secretKey;
-
     private String changedImageName(String originName) { //이미지 이름 중복 방지를 위해 랜덤으로 생성
         String random = UUID.randomUUID().toString();
         return random+originName;
