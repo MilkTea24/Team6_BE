@@ -70,7 +70,7 @@ public class ImageS3Service{
         metadata.setContentLength(image.getSize());
         try {
             System.out.println("S3 이미지 저장 시작 =======================");
-            PutObjectResult putObjectResult = amazonS3.putObject(new PutObjectRequest(
+            amazonS3.putObject(new PutObjectRequest(
                     bucketName, "images/" + changedName, image.getInputStream(), metadata
             ).withCannedAcl(CannedAccessControlList.PublicRead));
             System.out.println("S3 이미지 저장 끝 ===================");
