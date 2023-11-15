@@ -546,7 +546,7 @@ VALUES ('10', '0', '352', 'Maengyeosa Yukjeon Yukhoe', 'RESTAURANT','0',
         '10', '33');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/Maengyeosa/main.png', 'main.png','image/png');
+VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/main.png', 'main.png','image/png');
 
 INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
 VALUES ('10', '2F, 79', 'Gwangjang-ro 81beon-gil', '45231', '7');
@@ -569,7 +569,7 @@ INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('34', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/content1.png', 'content1.png', 'image/png');
 
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
-VALUES ('7', 'Yukjeon', 'Yukjeon is thinly sliced meat coated in a flour and egg and baked.', 'It tastes better when it\'s warm. This place is served several times, so it tastes good.', '35000', '11', '34');
+VALUES ('7', 'Yukjeon', 'Yukjeon is thinly sliced meat coated in a flour and egg and baked.', 'It tastes better when it\'s warm. This place is served several times, so it tastes good.', '35000', '11', '33');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('35', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/menu1.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/eybDwajigukbap/menu1.png','image/png');
@@ -748,22 +748,22 @@ VALUES ('3', 'LittleRyan@kakao.com', 'testUser3', 'LittleRyan', 'LittleRyan', '$
 
 -- Test User Reservation
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('1', '5', 'Please make a reservation for one table', '2023-11-07', '12:00', '????', '1', '4');
+VALUES ('1', '5', 'Please make a reservation for one table', '2023-11-07', '12:00', '예약완료', '1', '4');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('2', '2', '', '2023-11-09', '12:00', '????', '1', '1');
+VALUES ('2', '2', '', '2023-11-09', '12:00', '예약완료', '1', '1');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('3', '3', '', '2023-11-21', '18:00', '????', '1', '1');
+VALUES ('3', '3', '', '2023-11-21', '18:00', '예약완료', '1', '1');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('4', '4', '', '2023-11-05', '18:00', '????', '2', '10');
+VALUES ('4', '4', '', '2023-11-05', '18:00', '예약완료', '2', '10');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('5', '2', '', '2023-11-07', '12:00', '????', '2', '3');
+VALUES ('5', '2', '', '2023-11-07', '12:00', '예약완료', '2', '3');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('6', '4', '', '2023-11-07', '20:00', '????', '3', '2');
+VALUES ('6', '4', '', '2023-11-07', '20:00', '예약완료', '3', '2');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('7', '2', '', '2023-11-20', '12:00', '????', '3', '1');
+VALUES ('7', '2', '', '2023-11-20', '12:00', '예약완료', '3', '1');
