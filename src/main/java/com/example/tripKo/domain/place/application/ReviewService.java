@@ -65,7 +65,7 @@ public class ReviewService {
     //식당 & 축제 -> usageDate 예약 기준, 리뷰 제한
     if (placeType == PlaceType.RESTAURANT || placeType == PlaceType.FESTIVAL) {
       MemberReservationInfo memberReservationInfo = memberReservationInfoRepository.findByMemberAndPlaceAndStatus(
-          member, place, MemberReservationStatus.RESERVATION_SUCCESS);
+          member, place, MemberReservationStatus.예약완료);
       //예약 완료인지 체크
       if (Objects.isNull(memberReservationInfo)) {
         throw new BusinessException(null, "", REVIEW_BEFORE_RESERVATION);
@@ -88,11 +88,11 @@ public class ReviewService {
       //같은 날짜에 동일한 가게를 리뷰했었다면 더이상 리뷰 작성 불가능
       Review sameReview = reviewRepository.findReviewByMemberIdAndPlaceIdAndUsageDate(member.getId(),
           reviewRequest.getPlaceId(), usageDate);
-        if (!Objects.isNull(sameReview) || status.equals(MemberReservationStatus.REVIEW_SUCCESS.name())) {
+        if (!Objects.isNull(sameReview) || status.equals(MemberReservationStatus.리뷰완료.name())) {
             throw new BusinessException(sameReview.getId(), "id", REVIEW_ALREADY_DONE);
         }
 
-      memberReservationInfo.setStatus(MemberReservationStatus.REVIEW_SUCCESS);
+      memberReservationInfo.setStatus(MemberReservationStatus.리뷰완료);
     }
     //리뷰 별점 6점 이상일 경우 리뷰 작성 불가
       if (reviewRequest.getRating() > 5 || reviewRequest.getRating() < 1) {

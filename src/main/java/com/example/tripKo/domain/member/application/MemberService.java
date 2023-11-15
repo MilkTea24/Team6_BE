@@ -196,7 +196,7 @@ public class MemberService {
     MemberReservationInfo saveMemberReservationInfo = new MemberReservationInfo(
         member,
         requestDTO.getReservation().getHeadCount(),
-        MemberReservationStatus.RESERVATION_SUCCESS,
+        MemberReservationStatus.예약완료,
         place,
         requestDTO.getReservation().getReservationDate(),
         requestDTO.getReservation().getReservationTime(),
@@ -236,7 +236,7 @@ public class MemberService {
     MemberReservationInfo saveMemberReservationInfo = new MemberReservationInfo(
         member,
         requestDTO.getReservation().getHeadCount(),
-        MemberReservationStatus.RESERVATION_SUCCESS,
+        MemberReservationStatus.예약완료,
         place,
         requestDTO.getReservation().getReservationDate(),
         "", // 축제 예약은 시간 선택 기능이 없으니 빈 string으로 넘겨줌

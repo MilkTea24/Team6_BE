@@ -76,7 +76,7 @@ public class MemberReservationInfoTestHelper {
       return memberReservationInfoRepository.save(MemberReservationInfo.builder()
           .member(member != null ? member : memberTestHelper.generate())
           .headCount(headCount != null ? headCount : 10)
-          .status(status != null ? status : MemberReservationStatus.RESERVATION_PROCESSING)
+          .status(status != null ? status : MemberReservationStatus.예약대기)
           .place(place != null ? place : placeTestHelper.generate())
           .reservationDate(reservationDate != null ? reservationDate : "2023/10/11")
           .reservationTime(reservationTime != null ? reservationTime : "10:00")
