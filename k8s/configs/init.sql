@@ -616,7 +616,7 @@ We can encounter another world in this space that embraces the light and sound u
            , '2', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
-VALUES ('13', '10', '38');
+VALUES ('13', '13', '38');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('38', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/content2.png', 'content2.png', 'image/png');
@@ -728,7 +728,7 @@ INSERT INTO food_has_place_restaurants (`id`, `food_id`, `place_restaurant_id`)
 VALUES ('3', '3', '10');
 
 INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
-VALUES ('3', '3', '32');
+VALUES ('4', '3', '32');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/beeftartare1.png', 'beeftartare1.png', 'image/png');
