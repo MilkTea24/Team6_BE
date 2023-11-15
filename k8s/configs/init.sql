@@ -731,7 +731,10 @@ INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
 VALUES ('3', '3', '32');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/dwaejigukbap.png', 'dwaejigukbap.png', 'image/png');
+VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/beeftartare1.png', 'beeftartare1.png', 'image/png');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('39', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/beeftartare2.png', 'beeftartare2.png', 'image/png');
 
 -- Test User
 INSERT INTO member (`id`, `email_address`, `member_id`, `nick_name`, `real_name`, `password`, `role`)
