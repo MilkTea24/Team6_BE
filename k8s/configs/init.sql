@@ -304,13 +304,13 @@ INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('6', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/LeeJaemoPizza/content1.png', 'content1.png','image/png');
 
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
-VALUES ('3', 'Bulgogi Pizza', 'Lee Jaemo Pizza signature menu', 'Bulgogi pizza can only be found in Korea! It''s topped with bulgogi, a Korean beef dish.', '24000', '2', '7');
+VALUES ('3', 'Bulgogi Pizza', 'Lee Jaemo Pizza signature menu', 'It''s topped with bulgogi, a Korean beef dish.', '24000', '2', '7');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('7', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/LeeJaemoPizza/BulgogiPizza.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/LeeJaemoPizza/BulgogiPizza.png','image/png');
 
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
-VALUES ('4', 'Lee Jaemo Crust Pizza', 'A menu with lots of cheese for rich flavor', 'This one has cheese at the edge of the dough, so you can taste the cheese all the way to the end.', '25000', '2', '8');
+VALUES ('4', 'Lee Jaemo Crust Pizza', 'A menu with lots of cheese for rich flavor', 'This one has cheese at the edge of the dough, and topped with salami.', '25000', '2', '8');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('8', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/LeeJaemoPizza/CrustPizza.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/LeeJaemoPizza/CrustPizza.png','image/png');
@@ -335,8 +335,12 @@ VALUES ('3', '24:00', '+82 051-809-4321', '17:00', '3');
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('3',
-        'Amid the salty breezes and amber sunsets of California, I, a Korean American, discovered my love for craft beer—a taste that evoked stories and dreams. This Golden State taught me that brewing wasn’t just an act, but a lifestyle; an art that mirrored the soul of its creator. Driven by a longing to merge my dual identities, I took this West Coast ethos to Korea. My brewery now stands as a testament to this blend, an embodiment of Californian sunsets and Korean traditions, where every sip is a journey between two worlds.'
-           , '1', '3');
+        '\‘Feline\’ like a trip to a cat-themed Busan craft beer brewery?
+
+During our search for the best breweries and craft beer bars in Busan, we struggled to find any Busan brewery taprooms open on a Monday night but thankfully, Wildcat Brewing saw us right.
+
+Located on the outer edges of Busan’s hipster district Seomyeon, Wildcat Brewing is one beautiful Busan brewery and craft beer bar \– you get to try their craft beer in a taproom that directly overlooks all the brewing vats at Wildcat Brewing.'
+            , '1', '3');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
 VALUES ('3', '3', '10');
@@ -402,7 +406,7 @@ VALUES ('1'/*, 'Beach'*/, 'November 4, 2023', '0', 'November 4, 2023', '80000', 
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('5',
-        'The shining Gwangandaegyo Bridge begins coming into view. As the Gwangan Bridge gets closer, it becomes so crowded you can’t even find a gap to set your foot in. However, the people seem bright like the fireworks they’re waiting for, and you enjoy feeling the chilly sea breeze on this pleasant autumn night.'
+        'The shining Gwangan Bridge begins coming into view. As the Gwangan Bridge gets closer, it becomes so crowded you can\’t even find a gap to set your foot in. However, the people seem bright like the fireworks they\’re waiting for, and you enjoy feeling the chilly sea breeze on this pleasant autumn night.'
            , '1', '5');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -431,7 +435,7 @@ VALUES ('2'/*, 'Music'*/, 'October 7, 2023', '0', 'October 8, 2023', '70000', '6
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('6',
-        'The Busan International Rock Festival, which began in 2000, has been recognized as the oldest rock music festival in South Korea. Indie rock bands from all over the country, including Busan and top-notch international and local music bands, participate in the festival. As a result, local and international rock enthusiasts look forward to this event. Why not come and join the two-day music festival? As soon as you enter the extensive, green festival venue of the park, you’ll begin your fantastic music tour.'
+        'The Busan International Rock Festival, which began in 2000, has been recognized as the oldest rock music festival in South Korea. Indie rock bands from all over the country, including Busan and top-notch international and local music bands, participate in the festival. As a result, local and international rock enthusiasts look forward to this event. Why not come and join the two-day music festival? As soon as you enter the extensive, green festival venue of the park, you\’ll begin your fantastic music tour.'
            , '1', '6');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -460,7 +464,7 @@ VALUES ('3'/*, 'Beach'*/, 'December 7, 2023', '0', 'January 31, 2024', '0', '7')
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('7',
-        'e dark night sea of Haeundae, in contrast with the sea of lights, makes the scene more phenomenal. In addition to the sparkling illuminations on the streets, the smile on people’s faces further brightens up Haeundae Lighting Festival.'
+        'The dark night sea of Haeundae, in contrast with the sea of lights, makes the scene more phenomenal. In addition to the sparkling illuminations on the streets, the smile on people\’s faces further brightens up Haeundae Lighting Festival.'
            , '1', '7');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -486,7 +490,7 @@ VALUES ('1'/*, 'CultureComplex'*/, '8');
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('8',
-        'The name F1963 combines the first letter from the word “factory” and the year “1963” when the first factory of Kiswire was built. The company’s wire factory, operated until 2008, was transferred, and the empty site transformed into a complex culture space.'
+        'The name F1963 combines the first letter from the word \“factory\” and the year \“1963\” when the first factory of Kiswire was built. The company\’s wire factory, operated until 2008, was transferred, and the empty site transformed into a complex culture space.'
            , '1', '8');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -515,7 +519,7 @@ VALUES ('9',
         'The first place to catch the sea breeze.
 The closest place to encounter the spectacular night view of the Marine City and Gwangandaegyo Bridge.
 Millak Waterside Park, a popular summer retreat for the public.
-Opened in 1997, the Millak Waterside Park has been loved by Busan’s citizens since even before the establishment of the Marine City and Gwangandaegyo Bridge. With an open view of the endless sea and blue skies, the park has served as a relaxation space for everyone while the surrounding environment has kept changing with the times.'
+Opened in 1997, the Millak Waterside Park has been loved by Busan\’s citizens since even before the establishment of the Marine City and Gwangandaegyo Bridge. With an open view of the endless sea and blue skies, the park has served as a relaxation space for everyone while the surrounding environment has kept changing with the times.'
            , '1', '9');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -526,7 +530,7 @@ VALUES ('24', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('10',
-        'The Millak Waterside Park boasts the food town as well as various convenient facilities. Visitors can enjoy a relaxing time with a coffee at a café against the backdrop of the sea or taste fresh seafood in the food stall town. Some people like to buy packed raw fish and seafood from the nearby fresh fish town or the raw fish market and then enjoy it at the park while having a romantic, memorable time with their friends at the seafront.'
+        'The Millak Waterside Park boasts the food town as well as various convenient facilities. Visitors can enjoy a relaxing time with a coffee at a caf\é against the backdrop of the sea or taste fresh seafood in the food stall town. Some people like to buy packed raw fish and seafood from the nearby fresh fish town or the raw fish market and then enjoy it at the park while having a romantic, memorable time with their friends at the seafront.'
            , '2', '9');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -535,10 +539,48 @@ VALUES ('10', '10', '25');
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('25', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/MillakPark/content2.png', 'content2.png', 'image/png');
 
+-- Maengyesa Yukjeon Yukhoe
+INSERT INTO place (`id`,`average_rating`,`count`,`name`,`place_type`, `review_numbers`,`summary`,`address_id`,`file_id`)
+VALUES ('10', '0', '352', 'Maengyeosa Yukjeon Yukhoe', 'RESTAURANT','0',
+        'Yukjeon and yukhoe, already tasty on their own, can be enjoyed in various ways here.',
+        '10', '33');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/main.png', 'main.png','image/png');
+
+INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
+VALUES ('10', '2F, 79', 'Gwangjang-ro 81beon-gil', '45231', '7');
+
+INSERT INTO address_category (`id`, `emd_name`, `sigg_name`, `sido_name`)
+VALUES ('7', 'Gaebeop-dong', 'Sasang-gu', 'Busan');
+
+INSERT INTO place_restaurant(`id`, `closing_time`, `contact_info`, `opening_time`, `place_id`)
+VALUES ('5', '00:30', '+82 0507-1372-5203', '16:00', '10');
+
+INSERT INTO contents (`id`, `description`, `page`, `place_id`)
+VALUES ('11',
+        'Mangyesa Yukjeon Yukhoe is a place where you can try yukjeon and yukhoe, two famous Korean beef dishes. There are two types of yukhoe, gochujang-seasoned and salt-seasoned, so you can choose your favorite. The yukjeon is grilled after you order it, and the staff will cut it for you at the table. Koreans come here to enjoy makgeolli and soju with their food.'
+           , '1', '10');
+
+INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
+VALUES ('11', '11', '34');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('34', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/content1.png', 'content1.png', 'image/png');
+
+INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
+VALUES ('7', 'Yukjeon', 'Yukjeon is thinly sliced meat coated in a flour and egg and baked.', 'It tastes better when it\'s warm. This place is served several times, so it tastes good.', '35000', '11', '34');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('35', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/menu1.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/eybDwajigukbap/menu1.png','image/png');
+
+INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
+VALUES ('8', 'Yukhoe', 'yukhoe is a dish of marinated raw beef slices with egg yolk, korean pear, sesame oil.', 'This place offers beef tartare with perilla leaves', '35000', '11', '35');
+
 -- bulgogi
 INSERT INTO food (`id`,`summary`,`food_category`,`keyword`,`name`, `description`,`view`,`file_id`)
 VALUES ('1', 'Bulgogi is a made of thin, marinated slices of meat, most commonly beef, grilled on a barbecue or on a stove-top griddle',
-        'KOREAN', 'Bulgogi KoreanGrilledBeef KoreanMarinatedBeef Yakiniku Korean Beef', 'Bulgogi','Bulgogi is a delicious Korean dish made with thinly sliced marinated beef, typically grilled or stir-fried. The marinade usually consists of soy sauce, sugar, sesame oil, garlic, and pepper, giving the beef a sweet and savory flavor.',
+        'KOREAN', 'Bulgogi KoreanGrilledBeef KoreanMarinatedBeef Yakiniku Korean Grilled Marinated Beef', 'Bulgogi','Bulgogi is a delicious Korean dish made with thinly sliced marinated beef, typically grilled or stir-fried. The marinade usually consists of soy sauce, sugar, sesame oil, garlic, and pepper, giving the beef a sweet and savory flavor.',
         '23', '26');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
@@ -583,8 +625,8 @@ VALUES ('28', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/
 -- Dwaejigukbap
 INSERT INTO food (`id`,`summary`,`food_category`,`keyword`,`name`, `description`,`view`,`file_id`)
 VALUES ('2', 'Dwaeji gukbap is a South Korean soup especially popular in Busan made with pork, soy sauce, miso, rice wine, sesame oil, and bone broth.',
-        'KOREAN', 'DwaejiGukbap KoreanPorkSoup BusanStylePorkSoup PorkAndRiceSoup Korean Dwaji Gukbap Pork Soup', 'Dwaji gukbap(Pork Soup)','It originated during the Korean War in the 1950s as poverty food. It eventually grew in popularity. The dish spread from Busan to the rest of the Gyeongsang province and eventually the rest of the country. It is served various with sauces, garnishes, and side dishes. Variations exist in the exact preparation. It can be served with rice either already in the soup or on the side, and it can also be served with noodles. Other accompaniments like green onions, fermented shrimp, red pepper paste, white onions, garlic, and different types of kimchi, can also be added.',
-        '63', '27');
+        'KOREAN', 'DwaejiGukbap KoreanPorkSoup BusanStylePorkSoup PorkAndRiceSoup Korean Dwaji Gukbap Pork Soup', 'Dwaji gukbap(Pork and Rice Soup)','It originated during the Korean War in the 1950s as poverty food. It eventually grew in popularity. The dish spread from Busan to the rest of the Gyeongsang province and eventually the rest of the country. It is served various with sauces, garnishes, and side dishes. Variations exist in the exact preparation. It can be served with rice either already in the soup or on the side, and it can also be served with noodles. Other accompaniments like green onions, fermented shrimp, red pepper paste, white onions, garlic, and different types of kimchi, can also be added.',
+        '63', '29');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('29', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/dwaejigukbap.png', 'dwaejigukbap.png', 'image/png');
@@ -596,10 +638,10 @@ INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
 VALUES ('2', 'Salted Shrimp');
 
 INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
-VALUES ('2', 'noodle');
+VALUES ('2', 'Noodle');
 
 INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
-VALUES ('2', 'spice Seasoning');
+VALUES ('2', 'Spice Seasoning');
 
 INSERT INTO food_has_place_restaurants (`id`, `food_id`, `place_restaurant_id`)
 VALUES ('2', '2', '4');
@@ -611,3 +653,70 @@ INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('30', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/dwaejigukbap.png', 'dwaejigukbap.png', 'image/png');
 
 
+-- Yukhoe
+INSERT INTO food (`id`,`summary`,`food_category`,`keyword`,`name`, `description`,`view`,`file_id`)
+VALUES ('3', 'yukhoe is a dish of marinated raw beef slices with egg yolk, korean pear, sesame oil',
+        'KOREAN', 'Yukhoe Korean BeefTartare sixtimes seasonedRawBeef six times seasoned raw beef tartare', 'Yukhoe(Beef Tartare)', 'Yukhoe is most commonly made of lean cuts such as an eye of round, but more tender cuts of a beef can also be used. The beef is cut into thin strips while removing the fat, then it is seasoned with salt, sugar, sesame oil, pepper, and garlic. Korean pear, raw egg yolk, and pine nuts are commonly used as garnishes. It is similar to a Western tartare. A delicious way to eat it is to mix the yolk on top of the tartare, and then eat it with the pear.',
+        '59', '31');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('31', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/beeftartare.jpeg', 'beeftartare.jpeg', 'image/jpeg');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'Beef');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'Sesame Oil');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'raw egg yolk');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'Korean Pear');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'garlic');
+
+INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
+VALUES ('3', 'chogochujaing(chili pepper condiment mixed with vinegar and sugar');
+
+INSERT INTO food_has_place_restaurants (`id`, `food_id`, `place_restaurant_id`)
+VALUES ('3', '3', '10');
+
+INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
+VALUES ('3', '2', '32');
+
+INSERT INTO file (`id`, `url`, `name`, `type`)
+VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/dwaejigukbap.png', 'dwaejigukbap.png', 'image/png');
+
+-- Test User
+INSERT INTO member (`id`, `email_address`, `member_id`, `nick_name`, `real_name`, `password`, `role`)
+VALUES ('1', 'Apeach@kakao.com', 'testUser1', 'Apeach', 'Apeach', '$2a$10$Ymbs5J0RhSHzDgbapfWkJ.VNa3qO5RWTNKc5PFXHQqHxAVu2ZcN9W', 'MEMBER');
+
+INSERT INTO member (`id`, `email_address`, `member_id`, `nick_name`, `real_name`, `password`, `role`)
+VALUES ('2', 'ChunSik@kakao.com', 'testUser2', 'ChunSik', 'ChunSik', '$2a$10$Ymbs5J0RhSHzDgbapfWkJ.VNa3qO5RWTNKc5PFXHQqHxAVu2ZcN9W', 'MEMBER');
+
+INSERT INTO member (`id`, `email_address`, `member_id`, `nick_name`, `real_name`, `password`, `role`)
+VALUES ('3', 'LittleRyan@kakao.com', 'testUser3', 'LittleRyan', 'LittleRyan', '$2a$10$Ymbs5J0RhSHzDgbapfWkJ.VNa3qO5RWTNKc5PFXHQqHxAVu2ZcN9W', 'MEMBER');
+
+-- Test User Reservation
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('1', '5', 'Please make a reservation for one table', '2023-11-07', '12:00', '????', '1', '4');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('2', '2', '', '2023-11-09', '12:00', '????', '1', '1');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('3', '3', '', '2023-11-21', '18:00', '????', '1', '1');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('4', '4', '', '2023-11-05', '18:00', '????', '2', '10');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('5', '2', '', '2023-11-07', '12:00', '????', '2', '3');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('6', '4', '', '2023-11-07', '20:00', '????', '3', '2');
+
+INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
+VALUES ('7', '2', '', '2023-11-20', '12:00', '????', '3', '1');
