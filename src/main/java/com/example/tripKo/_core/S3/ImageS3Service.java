@@ -71,10 +71,10 @@ public class ImageS3Service{
 
         System.out.println(image.getSize());
 
-        try {
+        try (InputStream inputStream = image.getInputStream()) {
             System.out.println("S3 이미지 저장 시작 =======================");
             amazonS3.putObject(new PutObjectRequest(
-                    bucketName, "images/" + changedName, image.getInputStream(), metadata
+                    bucketName, "images/" + changedName, inputStream, metadata
             ).withCannedAcl(CannedAccessControlList.PublicRead));
             System.out.println("S3 이미지 저장 끝 ===================");
         } catch (IOException e) {
