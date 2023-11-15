@@ -546,7 +546,7 @@ VALUES ('10', '0', '352', 'Maengyeosa Yukjeon Yukhoe', 'RESTAURANT','0',
         '10', '33');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/main.png', 'main.png','image/png');
+VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/Maengyeosa/main.png', 'main.png','image/png');
 
 INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
 VALUES ('10', '2F, 79', 'Gwangjang-ro 81beon-gil', '45231', '7');
@@ -599,7 +599,7 @@ INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('12',
         'The 1540 square meter Eternal Journey bookstore is the biggest facility in Ananti Town,
 and it offers cultural experiences that has never been available before.
-It offers many choices to choose from to find one\’s unique taste, sensitivity or lifestyle.\\n'
+It offers many choices to choose from to find one\’s unique taste, sensitivity or lifestyle.'
            , '1', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -612,7 +612,7 @@ INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('13',
         'The beautiful nature that transcends time is a source of inspiration and eternal muse for ANANTI.
 The Media Art Gallery of Cabinet de Poissons is a world that appreciates the greatness of nature and awakens the spirits of nature.
-We can encounter another world in this space that embraces the light and sound unique to nature and transcends time and space.\\n'
+We can encounter another world in this space that embraces the light and sound unique to nature and transcends time and space.'
            , '2', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
@@ -725,7 +725,7 @@ INSERT INTO food_ingredients (`food_id`, `ingredients_name`)
 VALUES ('3', 'chogochujaing(chili pepper condiment mixed with vinegar and sugar');
 
 INSERT INTO food_has_place_restaurants (`id`, `food_id`, `place_restaurant_id`)
-VALUES ('3', '3', '10');
+VALUES ('3', '3', '5');
 
 INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
 VALUES ('4', '3', '32');
