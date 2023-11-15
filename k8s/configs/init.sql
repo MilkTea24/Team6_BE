@@ -581,7 +581,7 @@ VALUES ('8', 'Yukhoe', 'yukhoe is a dish of marinated raw beef slices with egg y
 INSERT INTO place (`id`,`average_rating`,`count`,`name`,`place_type`, `review_numbers`,`summary`,`address_id`,`file_id`)
 VALUES ('11', '0', '423', 'ANANTI COBE', 'TOURIST_SPOT','0',
         'All the travels you expect are right here',
-        '10', '36');
+        '11', '36');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('36', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/main.png', 'main.png','image/png');
@@ -597,9 +597,9 @@ VALUES ('3'/*, 'Beach'*/, '11');
 
 INSERT INTO contents (`id`, `description`, `page`, `place_id`)
 VALUES ('12',
-        'The 1540\㎡ Eternal Journey bookstore is the biggest facility in Ananti Town,
+        'The 1540 square meter Eternal Journey bookstore is the biggest facility in Ananti Town,
 and it offers cultural experiences that has never been available before.
-It offers many choices to choose from to find one’s unique taste, sensitivity or lifestyle.'
+It offers many choices to choose from to find one\’s unique taste, sensitivity or lifestyle.'
            , '1', '11');
 
 INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
