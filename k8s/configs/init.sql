@@ -587,7 +587,7 @@ INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('36', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/AnantiCobe/main.png', 'main.png','image/png');
 
 INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
-VALUES ('10', '268-31', 'Gijanghaean-ro', '46083', '8');
+VALUES ('11', '268-31', 'Gijanghaean-ro', '46083', '8');
 
 INSERT INTO address_category (`id`, `emd_name`, `sigg_name`, `sido_name`)
 VALUES ('8', 'Gijang-eup', 'Gijang-gun', 'Busan');
@@ -728,7 +728,7 @@ INSERT INTO food_has_place_restaurants (`id`, `food_id`, `place_restaurant_id`)
 VALUES ('3', '3', '10');
 
 INSERT INTO food_has_file (`id`, `food_id`, `file_id`)
-VALUES ('3', '2', '32');
+VALUES ('3', '3', '32');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
 VALUES ('32', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/food/dwaejigukbap.png', 'dwaejigukbap.png', 'image/png');
