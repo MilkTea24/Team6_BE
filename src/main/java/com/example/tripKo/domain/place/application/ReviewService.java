@@ -117,7 +117,7 @@ public class ReviewService {
 
 
         //리뷰에 이미지가 있다면 이미지를 리소스 폴더에 저장하고 정보를 File 테이블에 저장
-        if (!reviewRequest.getImage().isEmpty()) {
+        if (reviewRequest.getImage() != null) {
             List<com.example.tripKo.domain.file.entity.File> fileEntities = new ArrayList<>();
             for(MultipartFile i : reviewRequest.getImage()) {
                 fileEntities.add(imageS3Service.uploadImage(i));
@@ -166,22 +166,24 @@ public class ReviewService {
     return reviewsResponse;
   }
 
-  @Transactional
-  public void updateReview(Long reviewId, ReviewUpdateRequest reviewUpdateRequest) {
-    Review review = reviewRepository.findById(reviewId)
-        .orElseThrow(() -> new BusinessException(reviewId, "id", REVIEW_CANNOT_FOUND));
+    @Transactional
+    public void updateReview(Long reviewId, ReviewUpdateRequest reviewUpdateRequest) {
+        Review review = reviewRepository.findById(reviewId)
+                .orElseThrow(() -> new BusinessException(reviewId, "id", REVIEW_CANNOT_FOUND));
 
-    Place place = placeRepository.findById(reviewUpdateRequest.getPlaceId())
-        .orElseThrow(() -> new BusinessException(reviewUpdateRequest.getPlaceId(), "id", PLACE_ID_CANNOT_FOUND));
+        Place place = placeRepository.findById(reviewUpdateRequest.getPlaceId())
+                .orElseThrow(() -> new BusinessException(reviewUpdateRequest.getPlaceId(), "id", PLACE_ID_CANNOT_FOUND));
 
-    int originalRate = review.getScore();
-    review.update(reviewUpdateRequest);
+        int originalRate = review.getScore();
+        review.update(reviewUpdateRequest);
 
-        List<ReviewHasFile> reviewHasFiles = deleteImages(reviewId, reviewUpdateRequest.getDeleteImage());
-        reviewFileRepository.deleteAll(reviewHasFiles);
+        if (reviewUpdateRequest.getDeleteImage() != null) {
+            List<ReviewHasFile> reviewHasFiles = deleteImages(reviewId, reviewUpdateRequest.getDeleteImage());
+            reviewFileRepository.deleteAll(reviewHasFiles);
+        }
 
         //리뷰에 이미지가 있다면 이미지를 리소스 폴더에 저장하고 정보를 File 테이블에 저장
-        if (!reviewUpdateRequest.getImage().isEmpty()) {
+        if (reviewUpdateRequest.getImage() != null) {
             List<com.example.tripKo.domain.file.entity.File> fileEntities = new ArrayList<>();
             for(MultipartFile i : reviewUpdateRequest.getImage()) {
                 fileEntities.add(imageS3Service.uploadImage(i));
@@ -191,16 +193,16 @@ public class ReviewService {
             reviewFileRepository.saveAll(reviewHasFilesForSave);
         }
 
-    //평균 별점 업데이트
-    int reviewNumbers = place.getReviewNumbers();
-    double average = place.getAverageRating();
+        //평균 별점 업데이트
+        int reviewNumbers = place.getReviewNumbers();
+        double average = place.getAverageRating();
 
-    average = ((double) reviewUpdateRequest.getRating() + (average * reviewNumbers) - originalRate) / (reviewNumbers);
-    average = Math.round(average * 10) / 10.0;
-    place.setReviewNumbers(reviewNumbers);
-    place.setAverageRating(average);
+        average = ((double) reviewUpdateRequest.getRating() + (average * reviewNumbers) - originalRate) / (reviewNumbers);
+        average = Math.round(average * 10) / 10.0;
+        place.setReviewNumbers(reviewNumbers);
+        place.setAverageRating(average);
 
-  }
+    }
 
   @Transactional
   public void deleteReview(Long reviewId) {

@@ -1,5 +1,6 @@
 package com.example.tripKo._core.S3;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Protocol;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentials;
@@ -54,24 +55,18 @@ public class S3Config {
         //Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
         AWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
 
+        ClientConfiguration clientConfiguration = new ClientConfiguration();
+        clientConfiguration.setProxyHost(proxyHost);
+        clientConfiguration.setProxyPort(proxyPort);
+        //clientConfiguration.setProxyProtocol(Protocol.HTTP);
+        //clientConfiguration.setConnectionTimeout(30000);
+        //clientConfiguration.setSocketTimeout(30000);
+
         // Configure the client with proxy settings
             return AmazonS3ClientBuilder.standard()
                     .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                     .withRegion(region)
-                    .withClientConfiguration(getClientConfigurationWithProxy())
+                    .withClientConfiguration(clientConfiguration)
                     .build();
-    }
-
-    private com.amazonaws.ClientConfiguration getClientConfigurationWithProxy() {
-        com.amazonaws.ClientConfiguration clientConfiguration = new com.amazonaws.ClientConfiguration();
-        //InetSocketAddress address = (InetSocketAddress) proxy.address();
-        //HttpHost httpHost = new HttpHost(address.getHostName(), address.getPort());
-        clientConfiguration.setProxyHost(proxyHost);
-        clientConfiguration.setProxyPort(proxyPort);
-        clientConfiguration.setProxyProtocol(Protocol.HTTP);
-        clientConfiguration.setConnectionTimeout(30000);
-        clientConfiguration.setSocketTimeout(30000);
-
-        return clientConfiguration;
     }
 }
