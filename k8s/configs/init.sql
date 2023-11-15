@@ -751,22 +751,22 @@ VALUES ('3', 'LittleRyan@kakao.com', 'testUser3', 'LittleRyan', 'LittleRyan', '$
 
 -- Test User Reservation
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('1', '5', 'Please make a reservation for one table', '2023-11-07', '12:00', '예약완료', '1', '4');
+VALUES ('1', '5', 'Please make a reservation for one table', '2023-11-07', '12:00', 'RESERVATION_SUCCESS', '1', '4');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('2', '2', '', '2023-11-09', '12:00', '예약완료', '1', '1');
+VALUES ('2', '2', '', '2023-11-09', '12:00', 'RESERVATION_SUCCESS', '1', '1');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('3', '3', '', '2023-11-21', '18:00', '예약완료', '1', '1');
+VALUES ('3', '3', '', '2023-11-21', '18:00', 'RESERVATION_SUCCESS', '1', '1');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('4', '4', '', '2023-11-05', '18:00', '예약완료', '2', '10');
+VALUES ('4', '4', '', '2023-11-05', '18:00', 'RESERVATION_SUCCESS', '2', '10');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('5', '2', '', '2023-11-07', '12:00', '예약완료', '2', '3');
+VALUES ('5', '2', '', '2023-11-07', '12:00', 'RESERVATION_SUCCESS', '2', '3');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('6', '4', '', '2023-11-07', '20:00', '예약완료', '3', '2');
+VALUES ('6', '4', '', '2023-11-07', '20:00', 'RESERVATION_SUCCESS', '3', '2');
 
 INSERT INTO member_reservation_info (`id`, `head_count`, `message`, `reservation_date`, `reservation_time`, `status`, `member_id`, `place_id`)
-VALUES ('7', '2', '', '2023-11-20', '12:00', '예약완료', '3', '1');
+VALUES ('7', '2', '', '2023-11-20', '12:00', 'RESERVATION_SUCCESS', '3', '1');
