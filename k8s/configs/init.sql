@@ -541,12 +541,12 @@ VALUES ('25', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/spot/
 
 -- Maengyesa Yukjeon Yukhoe
 INSERT INTO place (`id`,`average_rating`,`count`,`name`,`place_type`, `review_numbers`,`summary`,`address_id`,`file_id`)
-VALUES ('10', '0', '352', 'Maengyeosa Yukjeon Yukhoe', 'RESTAURANT','0',
+VALUES ('10', '0', '352', 'MaengYeosa Yukjeon Yukhoe', 'RESTAURANT','0',
         'Yukjeon and yukhoe, already tasty on their own, can be enjoyed in various ways here.',
         '10', '33');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/main.png', 'main.png','image/png');
+VALUES ('33', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/Maengyeosa/main.png', 'main.png','image/png');
 
 INSERT INTO address (`id`, `building_name`, `road_name`, `zip_code`, `address_category_id`)
 VALUES ('10', '2F, 79', 'Gwangjang-ro 81beon-gil', '45231', '7');
@@ -566,13 +566,13 @@ INSERT INTO contents_has_file (`id`, `contents_id`, `file_id`)
 VALUES ('11', '11', '34');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('34', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/content1.png', 'content1.png', 'image/png');
+VALUES ('34', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/Maengyeosa/content1.png', 'content1.png', 'image/png');
 
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
 VALUES ('7', 'Yukjeon', 'Yukjeon is thinly sliced meat coated in a flour and egg and baked.', 'It tastes better when it\'s warm. This place is served several times, so it tastes good.', '35000', '11', '33');
 
 INSERT INTO file (`id`, `url`, `name`, `type`)
-VALUES ('35', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/MaengyeosaYukjeonYukhoe/menu1.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/eybDwajigukbap/menu1.png','image/png');
+VALUES ('35', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/Maengyeosa/menu1.png', 'https://tripko-be6.s3.ap-northeast-2.amazonaws.com/contents/restaurant/eybDwajigukbap/menu1.png','image/png');
 
 INSERT INTO contents_menu (`id`, `name`, `characteristic`, `description`, `price`, `contents_id`, `file_id`)
 VALUES ('8', 'Yukhoe', 'yukhoe is a dish of marinated raw beef slices with egg yolk, korean pear, sesame oil.', 'This place offers beef tartare with perilla leaves', '35000', '11', '35');
