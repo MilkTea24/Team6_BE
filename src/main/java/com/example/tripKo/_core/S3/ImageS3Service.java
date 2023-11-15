@@ -68,6 +68,9 @@ public class ImageS3Service{
         ObjectMetadata metadata = new ObjectMetadata(); //메타데이터
         metadata.setContentType("image/"+fileExtension);
         metadata.setContentLength(image.getSize());
+
+        System.out.println(image.getSize());
+
         try {
             System.out.println("S3 이미지 저장 시작 =======================");
             PutObjectResult putObjectResult = amazonS3.putObject(new PutObjectRequest(
