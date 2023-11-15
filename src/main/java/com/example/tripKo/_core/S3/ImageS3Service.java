@@ -22,10 +22,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
+import java.io.InputStream;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URLDecoder;
@@ -74,7 +74,7 @@ public class ImageS3Service{
 
         try (InputStream inputStream = image.getInputStream()) {
             System.out.println("S3 이미지 저장 시작 =======================");
-            PutObjectResult putObjectResult = amazonS3.putObject(new PutObjectRequest(
+            amazonS3.putObject(new PutObjectRequest(
                     bucketName, "images/" + changedName, inputStream, metadata
             ).withCannedAcl(CannedAccessControlList.PublicRead));
             System.out.println("S3 이미지 저장 끝 ===================");
