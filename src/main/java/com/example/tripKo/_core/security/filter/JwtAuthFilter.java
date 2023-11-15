@@ -27,7 +27,7 @@ public class JwtAuthFilter extends GenericFilterBean {
     HttpServletRequest httpServletRequest = (HttpServletRequest) request;
     String accessToken = jwtProvider.resolveAccessToken(httpServletRequest);
 
-    if (accessToken != null) {
+    if (!accessToken.isBlank()) {
       if (jwtProvider.validateToken(accessToken)) {
         Authentication authentication = jwtProvider.getAuthentication(accessToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
