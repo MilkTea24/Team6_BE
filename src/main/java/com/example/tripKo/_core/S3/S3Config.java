@@ -58,9 +58,9 @@ public class S3Config {
         ClientConfiguration clientConfiguration = new ClientConfiguration();
         clientConfiguration.setProxyHost(proxyHost);
         clientConfiguration.setProxyPort(proxyPort);
-        //clientConfiguration.setProxyProtocol(Protocol.HTTP);
-        //clientConfiguration.setConnectionTimeout(30000);
-        //clientConfiguration.setSocketTimeout(30000);
+        clientConfiguration.setProxyProtocol(Protocol.HTTP);
+        clientConfiguration.setConnectionTimeout(30000);
+        clientConfiguration.setSocketTimeout(30000);
 
         // Configure the client with proxy settings
             return AmazonS3ClientBuilder.standard()
