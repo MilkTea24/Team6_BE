@@ -3,17 +3,12 @@ package com.example.tripKo.domain.member.application;
 import static com.example.tripKo._core.errors.ErrorCode.EMAIL_ALREADY_EXIST;
 import static com.example.tripKo._core.errors.ErrorCode.FESTIVAL_ID_CANNOT_FOUND;
 import static com.example.tripKo._core.errors.ErrorCode.MEMBERID_ALREADY_EXIST;
-import static com.example.tripKo._core.errors.ErrorCode.RESERVATION_NOT_COMPLETE;
 import static com.example.tripKo._core.errors.ErrorCode.RESTAURANT_ID_CANNOT_FOUND;
 import static com.example.tripKo._core.errors.ErrorCode.REVIEW_CANNOT_FOUND;
 import static com.example.tripKo._core.errors.ErrorCode.REVIEW_NOT_MINE;
 
-import com.example.tripKo._core.errors.ErrorCode;
 import com.example.tripKo._core.errors.exception.BusinessException;
 import com.example.tripKo._core.S3.ImageS3Service;
-import com.example.tripKo._core.errors.exception.Exception400;
-import com.example.tripKo._core.errors.exception.Exception404;
-import com.example.tripKo._core.errors.exception.Exception500;
 import com.example.tripKo._core.security.JwtProvider;
 import com.example.tripKo._core.security.data.JwtToken;
 import com.example.tripKo.domain.file.dao.FileRepository;
@@ -32,11 +27,8 @@ import com.example.tripKo.domain.member.dto.response.userInfo.UserInfoResponse;
 import com.example.tripKo.domain.member.entity.Member;
 import com.example.tripKo.domain.member.entity.MemberReservationInfo;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.example.tripKo.domain.place.dao.PlaceFestivalRepository;
@@ -48,7 +40,6 @@ import com.example.tripKo.domain.place.dao.ReviewRepository;
 import com.example.tripKo.domain.place.dto.request.RestaurantReservationConfirmRequest;
 import com.example.tripKo.domain.place.dto.response.info.FestivalReservationConfirmResponse;
 import com.example.tripKo.domain.place.dto.response.info.FestivalReservationSelectResponse;
-import com.example.tripKo.domain.place.dto.request.ReviewUpdateRequest;
 import com.example.tripKo.domain.place.dto.response.info.RestaurantReservationConfirmResponse;
 import com.example.tripKo.domain.place.dto.response.info.RestaurantReservationSelectResponse;
 import com.example.tripKo.domain.place.entity.Place;
@@ -61,7 +52,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -206,7 +196,7 @@ public class MemberService {
     MemberReservationInfo saveMemberReservationInfo = new MemberReservationInfo(
         member,
         requestDTO.getReservation().getHeadCount(),
-        MemberReservationStatus.예약완료,
+        MemberReservationStatus.RESERVATION_SUCCESS,
         place,
         requestDTO.getReservation().getReservationDate(),
         requestDTO.getReservation().getReservationTime(),
@@ -246,7 +236,7 @@ public class MemberService {
     MemberReservationInfo saveMemberReservationInfo = new MemberReservationInfo(
         member,
         requestDTO.getReservation().getHeadCount(),
-        MemberReservationStatus.예약완료,
+        MemberReservationStatus.RESERVATION_SUCCESS,
         place,
         requestDTO.getReservation().getReservationDate(),
         "", // 축제 예약은 시간 선택 기능이 없으니 빈 string으로 넘겨줌

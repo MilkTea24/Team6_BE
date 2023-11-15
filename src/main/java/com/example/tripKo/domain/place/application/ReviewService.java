@@ -4,7 +4,6 @@ import com.example.tripKo._core.S3.ImageS3Service;
 import com.example.tripKo._core.errors.exception.BusinessException;
 import com.example.tripKo._core.errors.exception.Exception400;
 import com.example.tripKo._core.errors.exception.Exception404;
-import com.example.tripKo._core.errors.exception.Exception500;
 import com.example.tripKo.domain.file.dao.FileRepository;
 import com.example.tripKo.domain.member.MemberReservationStatus;
 import com.example.tripKo.domain.member.dao.MemberReservationInfoRepository;
@@ -24,7 +23,7 @@ import com.example.tripKo.domain.place.entity.ReviewHasFile;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.stream.Collectors;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -32,10 +31,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -70,7 +65,7 @@ public class ReviewService {
     //식당 & 축제 -> usageDate 예약 기준, 리뷰 제한
     if (placeType == PlaceType.RESTAURANT || placeType == PlaceType.FESTIVAL) {
       MemberReservationInfo memberReservationInfo = memberReservationInfoRepository.findByMemberAndPlaceAndStatus(
-          member, place, MemberReservationStatus.예약완료);
+          member, place, MemberReservationStatus.RESERVATION_SUCCESS);
       //예약 완료인지 체크
       if (Objects.isNull(memberReservationInfo)) {
         throw new BusinessException(null, "", REVIEW_BEFORE_RESERVATION);
@@ -93,11 +88,11 @@ public class ReviewService {
       //같은 날짜에 동일한 가게를 리뷰했었다면 더이상 리뷰 작성 불가능
       Review sameReview = reviewRepository.findReviewByMemberIdAndPlaceIdAndUsageDate(member.getId(),
           reviewRequest.getPlaceId(), usageDate);
-        if (!Objects.isNull(sameReview) || status.equals(MemberReservationStatus.리뷰완료.name())) {
+        if (!Objects.isNull(sameReview) || status.equals(MemberReservationStatus.REVIEW_SUCCESS.name())) {
             throw new BusinessException(sameReview.getId(), "id", REVIEW_ALREADY_DONE);
         }
 
-      memberReservationInfo.setStatus(MemberReservationStatus.리뷰완료);
+      memberReservationInfo.setStatus(MemberReservationStatus.REVIEW_SUCCESS);
     }
     //리뷰 별점 6점 이상일 경우 리뷰 작성 불가
       if (reviewRequest.getRating() > 5 || reviewRequest.getRating() < 1) {

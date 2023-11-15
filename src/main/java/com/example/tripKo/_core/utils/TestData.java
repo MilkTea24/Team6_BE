@@ -11,7 +11,6 @@ import com.example.tripKo.domain.member.entity.MemberReservationInfo;
 import com.example.tripKo.domain.place.PlaceType;
 import com.example.tripKo.domain.place.dao.AddressCategoryRepository;
 import com.example.tripKo.domain.place.dao.AddressRepository;
-import com.example.tripKo.domain.place.dto.request.RestaurantReservationConfirmRequest;
 import com.example.tripKo.domain.place.entity.Address;
 import com.example.tripKo.domain.place.entity.AddressCategory;
 import com.example.tripKo.domain.food.FoodCategory;
@@ -34,9 +33,7 @@ import com.example.tripKo.domain.place.entity.PlaceTouristSpot;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -255,7 +252,7 @@ public class TestData implements CommandLineRunner {
             MemberReservationInfo.builder()
         .member(members.get(0))
         .headCount(2L)
-        .status(MemberReservationStatus.예약완료)
+        .status(MemberReservationStatus.RESERVATION_SUCCESS)
         .place(places.get(0))
         .reservationDate("2023-10-10")
         .reservationTime("17:00")
@@ -266,7 +263,7 @@ public class TestData implements CommandLineRunner {
             MemberReservationInfo.builder()
                     .member(members.get(0))
                     .headCount(2L)
-                    .status(MemberReservationStatus.예약완료)
+                    .status(MemberReservationStatus.RESERVATION_SUCCESS)
                     .place(places.get(3))
                     .reservationDate("2023-10-10")
                     .reservationTime("17:00")
