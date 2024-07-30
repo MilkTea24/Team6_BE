@@ -1,0 +1,46 @@
+version: "0.0.1"
+services:
+  redis:
+    image: redis:latest
+    expose:
+      - "6379"
+
+  mysql:
+    image: mysql:8.0.2
+    expose:
+      - "3306"
+    env_file:
+      - envs/mysql.env
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/:/docker-entrypoint-initdb.d/
+
+  nginx:
+    depends_on:
+      - frontend
+      - backend
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+
+  frontend:
+    build: ../../Team6_FE
+    env_file:
+      - envs/frontend.env
+    ports:
+      - "3000:3000"
+
+  backend:
+    build: ..
+    depends_on:
+      - redis
+      - mysql
+    env_file:
+      - envs/backend.env
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql-data:

@@ -38,7 +38,7 @@ public class S3Config {
     @Value("3128")
     private int proxyPort;
 
-    /*
+
     @Bean
     public AmazonS3 s3Builder() {
         AWSCredentials basicAWSCredentials = new BasicAWSCredentials(accessKey, secretKey);
@@ -47,8 +47,9 @@ public class S3Config {
                 .withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                 .withRegion(region).build();
     }
-    */
 
+
+    /*
     @Bean
     public AmazonS3 S3Builder() {
         // Create proxy settings
@@ -69,4 +70,5 @@ public class S3Config {
                     .withClientConfiguration(clientConfiguration)
                     .build();
     }
+     */
 }
